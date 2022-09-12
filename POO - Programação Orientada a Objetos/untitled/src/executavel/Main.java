@@ -35,6 +35,8 @@ public class Main {
         System.out.println("Nome da escola do aluno é: " + aluno1.getNomeEscola());
         System.out.println("Série em que o aluno está matriculado: " + aluno1.getSerieMatriculado());
         System.out.println("A média de notas do aluno " + aluno1.getNome() + " é: " + aluno1.getMediaNota());
+        System.out.println("Resultado: " + aluno1.getAlunoAprovado());
+        System.out.println(aluno1.getAlunoAprovado2());
         System.out.println("==================================================");
 
         //====================================================================================================
