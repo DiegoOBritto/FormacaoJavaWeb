@@ -19,6 +19,10 @@ public class Main {
         aluno1.setDataMatricula("01/01/2022");
         aluno1.setNomeEscola("Sp");
         aluno1.setSerieMatriculado("Ensino médio");
+        aluno1.setNota1(9);
+        aluno1.setNota2(8.8);
+        aluno1.setNota3(7.9);
+        aluno1.setNota4(9.7);
 
         System.out.println("Nome do aluno é: " + aluno1.getNome());
         System.out.println("Idade do aluno é: " + aluno1.getIdade());
@@ -30,6 +34,7 @@ public class Main {
         System.out.println("Data de matricula do aluno é: " + aluno1.getDataMatricula());
         System.out.println("Nome da escola do aluno é: " + aluno1.getNomeEscola());
         System.out.println("Série em que o aluno está matriculado: " + aluno1.getSerieMatriculado());
+        System.out.println("A média de notas do aluno " + aluno1.getNome() + " é: " + aluno1.getMediaNota());
         System.out.println("==================================================");
 
         //====================================================================================================
