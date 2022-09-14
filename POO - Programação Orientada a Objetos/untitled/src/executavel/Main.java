@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String nome = JOptionPane.showInputDialog("Digite o nome do aluno ? ");
+       /* String nome = JOptionPane.showInputDialog("Digite o nome do aluno ? ");
         String idade = JOptionPane.showInputDialog("Digite a idade do aluno ?");
         String nascimento = JOptionPane.showInputDialog("Digite a data de nascimento do aluno ?");
         String rg = JOptionPane.showInputDialog("Digite o RG do aluno ?");
@@ -45,6 +45,56 @@ public class Main {
 
         System.out.println(aluno1.toString()); //Descrição do obejto na memoria
         System.out.println("Média do aluno: " + aluno1.getMediaNota());
-        System.out.println("Resultado: " + aluno1.getAlunoAprovado2());
+        System.out.println("Resultado: " + aluno1.getAlunoAprovado2());*/
+
+        //Equals e Hashcode(diferenciar e comparar objetos)
+        Aluno aluno1 = new Aluno();
+        aluno1.setNome("Diego");
+        aluno1.setNumeroCpf("123");
+
+        Aluno aluno2 = new Aluno();
+        aluno2.setNome("Diego");
+        aluno2.setNumeroCpf("1233");
+
+        if (aluno1.equals(aluno2)) {
+            System.out.println("Alunos são iguais");
+        } else {
+            System.out.println("Alunos não são iguais");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
