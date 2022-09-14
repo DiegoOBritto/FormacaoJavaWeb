@@ -1,5 +1,7 @@
 package classesJava;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 //Classe(objeto) que representa o Aluno
@@ -16,8 +18,7 @@ public class Aluno {
     public String dataMatricula;
     public String nomeEscola;
     public String serieMatriculado;
-
-    private Disciplina disciplina = new Disciplina();
+    private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
     //Construtores criam os dados na memória - Sendo padrão do Java
     public Aluno() {
@@ -116,21 +117,21 @@ public class Aluno {
         this.numeroCpf = numeroCpf;
     }
 
-    public Disciplina getDisciplina() {
-        return disciplina;
+    public List<Disciplina> getDisciplinas() {
+        return disciplinas;
     }
 
-    public void setDisciplina(Disciplina disciplina) {
-        this.disciplina = disciplina;
+    public void setDisciplinas(List<Disciplina> disciplinas) {
+        this.disciplinas = disciplinas;
     }
 
     //Método que retorna a média de notas do aluno
     public double getMediaNota() {
-        return (disciplina.getNota1() + disciplina.getNota2() + disciplina.getNota3() + disciplina.getNota4()) / 4;
+        return 0;
     }
 
     //Método que retorna "true" se o aluno for aprovado e "false" se o aluno for reprovado
-     public boolean getAlunoAprovado() {
+    public boolean getAlunoAprovado() {
         double media = this.getMediaNota();
         if (media >= 7) {
             return true;
@@ -160,8 +161,7 @@ public class Aluno {
                 ", nomePai='" + nomePai + '\'' +
                 ", dataMatricula='" + dataMatricula + '\'' +
                 ", nomeEscola='" + nomeEscola + '\'' +
-                ", serieMatriculado='" + serieMatriculado + '\'' +
-                ", disciplina=" + disciplina +
+                ", serieMatriculado='" + serieMatriculado +
                 '}';
     }
 
