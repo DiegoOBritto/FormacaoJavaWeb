@@ -1,6 +1,7 @@
 package executavel;
 
 import classesJava.Aluno;
+import classesJava.Disciplina;
 
 import javax.swing.*;
 
@@ -19,17 +20,7 @@ public class Main {
         String escola = JOptionPane.showInputDialog("Digite o nome da escola: ");
         String serie = JOptionPane.showInputDialog("Digite a série em que o aluno está matriculado");
 
-        String primeiraDisciplina = JOptionPane.showInputDialog("Digite a primeira disciplina: ");
-        String primeiraNota = JOptionPane.showInputDialog("Digite a primeira nota: ");
 
-        String segundaDisciplina = JOptionPane.showInputDialog("Digite a segunda disciplina: ");
-        String segundaNota = JOptionPane.showInputDialog("Digite a segunda nota: ");
-
-        String terceiraDisciplina = JOptionPane.showInputDialog("Digite a terceira disciplina: ");
-        String terceiraNota = JOptionPane.showInputDialog("Digite a terceira nota: ");
-
-        String quartaDisciplina = JOptionPane.showInputDialog("Digite a quarta disciplina: ");
-        String quartaNota = JOptionPane.showInputDialog("Digite a quarta nota: ");
 
         //aluno1, aluno2...são referencias para o objeto aluno
         //new Aluno() é uma instancia (criação de um Objeto)
@@ -47,6 +38,25 @@ public class Main {
         aluno1.setNomeEscola(escola);
         aluno1.setSerieMatriculado(serie);
 
+        Disciplina disciplina1 = new Disciplina();
+        disciplina1.setDisciplina("Banco de Dados");
+        disciplina1.setNota(5.5);
+        aluno1.getDisciplinas().add(disciplina1);
+
+        Disciplina disciplina2 = new Disciplina();
+        disciplina2.setDisciplina("Java");
+        disciplina2.setNota(7.5);
+        aluno1.getDisciplinas().add(disciplina2);
+
+        Disciplina disciplina3 = new Disciplina();
+        disciplina3.setDisciplina("HTML/CSS");
+        disciplina3.setNota(5.5);
+        aluno1.getDisciplinas().add(disciplina3);
+
+        Disciplina disciplina4 = new Disciplina();
+        disciplina4.setDisciplina("Javascript");
+        disciplina4.setNota(5.5);
+        aluno1.getDisciplinas().add(disciplina4);
 
 
         System.out.println(aluno1.toString()); //Descrição do obejto na memoria
