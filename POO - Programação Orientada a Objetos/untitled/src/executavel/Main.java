@@ -46,19 +46,20 @@ public class Main {
         aluno1.setDataMatricula(matricula);
         aluno1.setNomeEscola(escola);
         aluno1.setSerieMatriculado(serie);
-        aluno1.setNota1(Double.valueOf(primeiraNota));
-        aluno1.setNota2(Double.valueOf(segundaNota));
-        aluno1.setNota3(Double.valueOf(terceiraNota));
-        aluno1.setNota4(Double.valueOf(quartaNota));
-        aluno1.setDisciplina1(primeiraDisciplina);
-        aluno1.setDisciplina2(segundaDisciplina);
-        aluno1.setDisciplina3(terceiraDisciplina);
-        aluno1.setDisciplina4(quartaDisciplina);
+
+        aluno1.getDisciplina().setNota1(Double.valueOf(primeiraNota));
+        aluno1.getDisciplina().setNota2(Double.valueOf(segundaNota));
+        aluno1.getDisciplina().setNota3(Double.valueOf(terceiraNota));
+        aluno1.getDisciplina().setNota4(Double.valueOf(quartaNota));
+
+        aluno1.getDisciplina().setDisciplina1(primeiraDisciplina);
+        aluno1.getDisciplina().setDisciplina2(segundaDisciplina);
+        aluno1.getDisciplina().setDisciplina3(terceiraDisciplina);
+        aluno1.getDisciplina().setDisciplina4(quartaDisciplina);
 
         System.out.println(aluno1.toString()); //Descrição do obejto na memoria
         System.out.println("Média do aluno: " + aluno1.getMediaNota());
         System.out.println("Resultado: " + aluno1.getAlunoAprovado2());
-
 
     }
 }
