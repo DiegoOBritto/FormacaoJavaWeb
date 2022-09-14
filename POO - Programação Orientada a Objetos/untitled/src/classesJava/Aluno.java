@@ -147,12 +147,14 @@ public class Aluno {
     public void setNota4(double nota4) {
         this.nota4 = nota4;
     }
+
     //Método que retorna a médi de notas do aluno
-    public double getMediaNota () {
-        return (nota1 + nota2 + nota3 + nota4)/ 4;
+    public double getMediaNota() {
+        return (nota1 + nota2 + nota3 + nota4) / 4;
     }
+
     //Método que retorna "true" se o aluno for aprovado e "false" se o aluno for reprovado
-    public boolean getAlunoAprovado () {
+    public boolean getAlunoAprovado() {
         double media = this.getMediaNota();
         if (media >= 7) {
             return true;
@@ -161,12 +163,32 @@ public class Aluno {
         }
     }
 
-    public String getAlunoAprovado2 () {
+    public String getAlunoAprovado2() {
         double media = this.getMediaNota();
         if (media >= 7) {
             return "Aluno está aprovado";
         } else {
             return "Aluno reprovado";
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Aluno{" +
+                "nome='" + nome + '\'' +
+                ", idade=" + idade +
+                ", dataNascimento='" + dataNascimento + '\'' +
+                ", registroGeral='" + registroGeral + '\'' +
+                ", numeroCpf='" + numeroCpf + '\'' +
+                ", nomeMae='" + nomeMae + '\'' +
+                ", nomePai='" + nomePai + '\'' +
+                ", dataMatricula='" + dataMatricula + '\'' +
+                ", nomeEscola='" + nomeEscola + '\'' +
+                ", serieMatriculado='" + serieMatriculado + '\'' +
+                ", nota1=" + nota1 +
+                ", nota2=" + nota2 +
+                ", nota3=" + nota3 +
+                ", nota4=" + nota4 +
+                '}';
     }
 }

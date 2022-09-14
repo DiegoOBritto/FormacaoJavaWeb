@@ -7,9 +7,6 @@ import javax.swing.*;
 public class Main {
 
     public static void main(String[] args) {
-        //aluno1, aluno2...são referencias para o objeto aluno
-        //new Aluno() é uma instancia (criação de um Objeto)
-        //Construtor padrão
 
         String nome = JOptionPane.showInputDialog("Digite o nome do aluno ? ");
         String idade = JOptionPane.showInputDialog("Digite a idade do aluno ?");
@@ -26,6 +23,9 @@ public class Main {
         String terceiraNota = JOptionPane.showInputDialog("Digite a terceira nota: ");
         String quartaNota = JOptionPane.showInputDialog("Digite a quarta nota: ");
 
+        //aluno1, aluno2...são referencias para o objeto aluno
+        //new Aluno() é uma instancia (criação de um Objeto)
+        //Construtor padrão
         Aluno aluno1 = new Aluno();
 
         aluno1.setNome(nome);
@@ -43,18 +43,8 @@ public class Main {
         aluno1.setNota3(Double.valueOf(terceiraNota));
         aluno1.setNota4(Double.valueOf(quartaNota));
 
-        System.out.println("Nome do aluno é: " + aluno1.getNome());
-        System.out.println("Idade do aluno é: " + aluno1.getIdade());
-        System.out.println("Data de nascimento do aluno é: " + aluno1.getDataNascimento());
-        System.out.println("RG do aluno é: " + aluno1.getRegistroGeral());
-        System.out.println("CPF do aluno é: " + aluno1.getNumeroCpf());
-        System.out.println("Nome da mãe do aluno é: " + aluno1.getNomeMae());
-        System.out.println("Nome do pai do aluno é: " + aluno1.getNomePai());
-        System.out.println("Data de matricula do aluno é: " + aluno1.getDataMatricula());
-        System.out.println("Nome da escola do aluno é: " + aluno1.getNomeEscola());
-        System.out.println("Série em que o aluno está matriculado: " + aluno1.getSerieMatriculado());
-        System.out.println("A média de notas do aluno " + aluno1.getNome() + " é: " + aluno1.getMediaNota());
-        System.out.println("Resultado: " + aluno1.getAlunoAprovado());
-        System.out.println(aluno1.getAlunoAprovado2());
+        System.out.println(aluno1.toString()); //Descrição do obejto na memoria
+        System.out.println("Média do aluno: " + aluno1.getMediaNota());
+        System.out.println("Resultado: " + aluno1.getAlunoAprovado2());
     }
 }
