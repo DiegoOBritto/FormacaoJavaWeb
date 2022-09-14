@@ -8,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-       /* String nome = JOptionPane.showInputDialog("Digite o nome do aluno ? ");
+        String nome = JOptionPane.showInputDialog("Digite o nome do aluno ? ");
         String idade = JOptionPane.showInputDialog("Digite a idade do aluno ?");
         String nascimento = JOptionPane.showInputDialog("Digite a data de nascimento do aluno ?");
         String rg = JOptionPane.showInputDialog("Digite o RG do aluno ?");
@@ -18,9 +18,17 @@ public class Main {
         String matricula = JOptionPane.showInputDialog("Digite a data da matricula do aluno: ");
         String escola = JOptionPane.showInputDialog("Digite o nome da escola: ");
         String serie = JOptionPane.showInputDialog("Digite a série em que o aluno está matriculado");
+
+        String primeiraDisciplina = JOptionPane.showInputDialog("Digite a primeira disciplina: ");
         String primeiraNota = JOptionPane.showInputDialog("Digite a primeira nota: ");
+
+        String segundaDisciplina = JOptionPane.showInputDialog("Digite a segunda disciplina: ");
         String segundaNota = JOptionPane.showInputDialog("Digite a segunda nota: ");
+
+        String terceiraDisciplina = JOptionPane.showInputDialog("Digite a terceira disciplina: ");
         String terceiraNota = JOptionPane.showInputDialog("Digite a terceira nota: ");
+
+        String quartaDisciplina = JOptionPane.showInputDialog("Digite a quarta disciplina: ");
         String quartaNota = JOptionPane.showInputDialog("Digite a quarta nota: ");
 
         //aluno1, aluno2...são referencias para o objeto aluno
@@ -42,58 +50,14 @@ public class Main {
         aluno1.setNota2(Double.valueOf(segundaNota));
         aluno1.setNota3(Double.valueOf(terceiraNota));
         aluno1.setNota4(Double.valueOf(quartaNota));
+        aluno1.setDisciplina1(primeiraDisciplina);
+        aluno1.setDisciplina2(segundaDisciplina);
+        aluno1.setDisciplina3(terceiraDisciplina);
+        aluno1.setDisciplina4(quartaDisciplina);
 
         System.out.println(aluno1.toString()); //Descrição do obejto na memoria
         System.out.println("Média do aluno: " + aluno1.getMediaNota());
-        System.out.println("Resultado: " + aluno1.getAlunoAprovado2());*/
-
-        //Equals e Hashcode(diferenciar e comparar objetos)
-        Aluno aluno1 = new Aluno();
-        aluno1.setNome("Diego");
-        aluno1.setNumeroCpf("123");
-
-        Aluno aluno2 = new Aluno();
-        aluno2.setNome("Diego");
-        aluno2.setNumeroCpf("1233");
-
-        if (aluno1.equals(aluno2)) {
-            System.out.println("Alunos são iguais");
-        } else {
-            System.out.println("Alunos não são iguais");
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        System.out.println("Resultado: " + aluno1.getAlunoAprovado2());
 
 
     }
