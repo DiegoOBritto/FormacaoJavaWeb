@@ -21,7 +21,6 @@ public class Main {
         String serie = JOptionPane.showInputDialog("Digite a série em que o aluno está matriculado");
 
 
-
         //aluno1, aluno2...são referencias para o objeto aluno
         //new Aluno() é uma instancia (criação de um Objeto)
         //Construtor padrão
@@ -38,8 +37,8 @@ public class Main {
         aluno1.setNomeEscola(escola);
         aluno1.setSerieMatriculado(serie);
 
-        for (int pos = 1; pos <= 4; pos ++) {
-            String nomeDisciplina = JOptionPane.showInputDialog("Informe a disciplina: " + pos );
+        for (int pos = 1; pos <= 4; pos++) {
+            String nomeDisciplina = JOptionPane.showInputDialog("Informe a disciplina: " + pos);
             String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina: " + pos);
 
             Disciplina disciplina = new Disciplina();
@@ -49,8 +48,11 @@ public class Main {
             aluno1.getDisciplinas().add(disciplina);
         }
 
-
-
+        int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina ?");
+        if (escolha == 0) {
+            String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina deseja remover: 1, 2, 3 ou 4 ? ");
+            aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - 1);
+        }
 
         System.out.println(aluno1.toString()); //Descrição do obejto na memoria
         System.out.println("Média do aluno: " + aluno1.getMediaNota());
