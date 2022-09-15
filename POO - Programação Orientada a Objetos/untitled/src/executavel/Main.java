@@ -38,25 +38,18 @@ public class Main {
         aluno1.setNomeEscola(escola);
         aluno1.setSerieMatriculado(serie);
 
-        Disciplina disciplina1 = new Disciplina();
-        disciplina1.setDisciplina("Banco de Dados");
-        disciplina1.setNota(5.5);
-        aluno1.getDisciplinas().add(disciplina1);
+        for (int pos = 1; pos <= 4; pos ++) {
+            String nomeDisciplina = JOptionPane.showInputDialog("Informe a disciplina: " + pos );
+            String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina: " + pos);
 
-        Disciplina disciplina2 = new Disciplina();
-        disciplina2.setDisciplina("Java");
-        disciplina2.setNota(7.5);
-        aluno1.getDisciplinas().add(disciplina2);
+            Disciplina disciplina = new Disciplina();
+            disciplina.setDisciplina(nomeDisciplina);
+            disciplina.setNota(Double.valueOf(notaDisciplina));
 
-        Disciplina disciplina3 = new Disciplina();
-        disciplina3.setDisciplina("HTML/CSS");
-        disciplina3.setNota(5.5);
-        aluno1.getDisciplinas().add(disciplina3);
+            aluno1.getDisciplinas().add(disciplina);
+        }
 
-        Disciplina disciplina4 = new Disciplina();
-        disciplina4.setDisciplina("Javascript");
-        disciplina4.setNota(5.5);
-        aluno1.getDisciplinas().add(disciplina4);
+
 
 
         System.out.println(aluno1.toString()); //Descrição do obejto na memoria
