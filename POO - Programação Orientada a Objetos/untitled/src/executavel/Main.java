@@ -75,10 +75,13 @@ public class Main {
 
         for (Aluno aluno : alunos) {
 
-            System.out.println(aluno.toString()); //Descrição do obejto na memoria
-            System.out.println("Média do aluno: " + aluno.getMediaNota());
-            System.out.println("Resultado: " + aluno.getAlunoAprovado2());
-            System.out.println("===============================================");
+            if (aluno.getNome().equalsIgnoreCase("diego")) {
+                System.out.println(aluno.toString()); //Descrição do obejto na memoria
+                System.out.println("Média do aluno: " + aluno.getMediaNota());
+                System.out.println("Resultado: " + aluno.getAlunoAprovado2());
+                System.out.println("===============================================");
+                break;
+            }
         }
     }
 }
