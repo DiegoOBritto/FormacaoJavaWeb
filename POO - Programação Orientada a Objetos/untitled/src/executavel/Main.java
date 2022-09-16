@@ -49,9 +49,18 @@ public class Main {
         }
 
         int escolha = JOptionPane.showConfirmDialog(null, "Deseja remover alguma disciplina ?");
+
         if (escolha == 0) {
-            String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina deseja remover: 1, 2, 3 ou 4 ? ");
-            aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - 1);
+
+            int conitnuarRemover = 0; //Opcão "sim" = 0
+            int posicao = 1;
+
+            while (conitnuarRemover == 0) {
+                String disciplinaRemover = JOptionPane.showInputDialog("Qual disciplina deseja remover: 1, 2, 3 ou 4 ? ");
+                aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue() - posicao);
+                posicao ++;
+                conitnuarRemover = JOptionPane.showConfirmDialog(null, "Deseja remover outra disciplina ?");
+            }
         }
 
         System.out.println(aluno1.toString()); //Descrição do obejto na memoria
