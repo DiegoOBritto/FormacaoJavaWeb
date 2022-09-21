@@ -13,7 +13,7 @@ public class Main {
 
         List<Aluno> alunos = new ArrayList<Aluno>();
 
-        for (int qtd = 1; qtd <= 2; qtd++) {
+        for (int qtd = 1; qtd <= 1; qtd++) {
 
             String nome = JOptionPane.showInputDialog("Digite o nome do aluno " + qtd + " ? ");
        /* String idade = JOptionPane.showInputDialog("Digite a idade do aluno ?");
@@ -72,29 +72,18 @@ public class Main {
             alunos.add(aluno1);
 
         }
+        for (int pos = 0; pos < alunos.size(); pos++) {
 
-        for (Aluno aluno : alunos) {
+            Aluno aluno = alunos.get(pos);
 
-            if (aluno.getNome().equalsIgnoreCase("diego")) {
-                alunos.remove(aluno);
-                break;
-            } else {
-                System.out.println(aluno.toString()); //Descrição do obejto na memoria
-                System.out.println("Média do aluno: " + aluno.getMediaNota());
-                System.out.println("Resultado: " + aluno.getAlunoAprovado2());
-                System.out.println("===============================================");
+            System.out.println("Aluno: " + aluno.getNome());
+            System.out.println("Média do aluno" + aluno.getMediaNota());
+            System.out.println("Resultado: " + aluno.getAlunoAprovado2());
+            System.out.println("==============================================");
+
+            for(Disciplina disc : aluno.getDisciplinas()) {
+                System.out.println("Disciplina: " + disc.getDisciplina() + " Nota = " + disc.getNota());
             }
         }
-
-        for (Aluno aluno : alunos) {
-            System.out.println("Alunos que sobraram na lista");
-            System.out.println(aluno.getNome());
-            System.out.println("Suas disciplinas são: ");
-
-            for (Disciplina disciplina : aluno.getDisciplinas()) {
-                System.out.println(disciplina.getDisciplina());
-            }
-        }
-
     }
 }
