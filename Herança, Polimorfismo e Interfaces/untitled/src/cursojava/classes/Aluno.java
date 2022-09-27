@@ -36,6 +36,11 @@ public class Aluno extends Pessoa {
         this.nome = nome;
     }
 
+    @Override
+    public double salario() {
+        return 1500;
+    }
+
     public String getNome() {
         return nome;
     }

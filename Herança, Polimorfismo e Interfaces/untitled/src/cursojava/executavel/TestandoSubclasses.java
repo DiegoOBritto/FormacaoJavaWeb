@@ -32,5 +32,8 @@ public class TestandoSubclasses {
         System.out.println(diretor.pessoaMaiorIdade());
         System.out.println(secretario.pessoaMaiorIdade());
 
+        System.out.println("Salário do aluno é: " + aluno.salario());
+        System.out.println("Salário do diretor é: " + diretor.salario());
+        System.out.println("Salário do secretário é: " + secretario.salario());
     }
 }

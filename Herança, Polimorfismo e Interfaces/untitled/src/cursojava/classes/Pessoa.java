@@ -1,4 +1,5 @@
 package cursojava.classes;
+
 //Superclasse (classe master/classe pai/classe mae)
 public abstract class Pessoa {
 
@@ -9,6 +10,8 @@ public abstract class Pessoa {
     protected String numeroCpf;
     protected String nomeMae;
     protected String nomePai;
+    //Método abstrato fica na Superclasse e é obrigatório nas Subclasses
+    public abstract double salario();
 
     public String getNome() {
         return nome;
@@ -65,8 +68,9 @@ public abstract class Pessoa {
     public void setNomePai(String nomePai) {
         this.nomePai = nomePai;
     }
+
     //retorna true caso seja maior de idade, caso contrário retorno false
-    public boolean pessoaMaiorIdade () {
+    public boolean pessoaMaiorIdade() {
         return idade >= 18;
     }
 }
