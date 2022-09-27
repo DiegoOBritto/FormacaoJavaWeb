@@ -1,6 +1,6 @@
 package cursojava.classes;
 //Superclasse (classe master/classe pai/classe mae)
-public class Pessoa {
+public abstract class Pessoa {
 
     protected String nome;
     protected int idade;
