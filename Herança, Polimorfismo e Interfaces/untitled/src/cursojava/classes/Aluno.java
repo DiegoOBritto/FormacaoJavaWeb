@@ -180,5 +180,15 @@ public class Aluno extends Pessoa {
     public int hashCode() {
         return Objects.hash(nome, numeroCpf);
     }
+
+    @Override //Identifica método sobrescrito
+    public boolean pessoaMaiorIdade() {
+        return idade >= 21;
+    }
+
+    public String msgMaiorIdade() {
+        return this.pessoaMaiorIdade() ? "Esse aluno é maior de idade" : "Esse aluno é menor de idade ";
+    }
+
 }
 
