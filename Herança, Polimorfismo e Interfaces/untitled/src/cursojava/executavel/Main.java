@@ -17,11 +17,7 @@ public class Main {
         String login = JOptionPane.showInputDialog("Informe o Login: ");
         String senha = JOptionPane.showInputDialog("Informe a Senha: ");
 
-        Secretario secretario = new Secretario();
-        secretario.setLogin(login);
-        secretario.setSenha(senha);
-
-        if (secretario.autenticar()) { //se TRUE: acessa, se FALSE: não acessaasdds
+        if (new Secretario().autenticar(login, senha)) { //se TRUE: acessa, se FALSE: não acessaasdds
 
             List<Aluno> alunos = new ArrayList<Aluno>();
 
