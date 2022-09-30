@@ -4,6 +4,7 @@ import cursojava.classes.Aluno;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
 import cursojava.constantes.StatusAluno;
+import cursojava.interfaces.PermitirAcesso;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -17,7 +18,9 @@ public class Main {
         String login = JOptionPane.showInputDialog("Informe o Login: ");
         String senha = JOptionPane.showInputDialog("Informe a Senha: ");
 
-        if (new Secretario().autenticar(login, senha)) { //se TRUE: acessa, se FALSE: não acessaasdds
+        PermitirAcesso permitirAcesso = new Secretario(login, senha);
+
+        if (new Secretario().autenticar()) { //se TRUE: acessa, se FALSE: não acessaasdds
 
             List<Aluno> alunos = new ArrayList<Aluno>();
 
