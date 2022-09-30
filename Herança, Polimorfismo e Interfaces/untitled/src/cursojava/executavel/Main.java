@@ -1,8 +1,10 @@
 package cursojava.executavel;
 
 import cursojava.classes.Aluno;
+import cursojava.classes.Diretor;
 import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
+import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
 import cursojava.interfaces.PermitirAcesso;
 
@@ -18,9 +20,7 @@ public class Main {
         String login = JOptionPane.showInputDialog("Informe o Login: ");
         String senha = JOptionPane.showInputDialog("Informe a Senha: ");
 
-        PermitirAcesso permitirAcesso = new Secretario(login, senha);
-
-        if (new Secretario().autenticar()) { //se TRUE: acessa, se FALSE: não acessaasdds
+        if (new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) {
 
             List<Aluno> alunos = new ArrayList<Aluno>();
 
