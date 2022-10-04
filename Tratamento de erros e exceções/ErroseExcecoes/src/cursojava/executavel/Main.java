@@ -43,7 +43,6 @@ public class Main {
                 String escola = JOptionPane.showInputDialog("Digite o nome da escola: ");
                 String serie = JOptionPane.showInputDialog("Digite a série em que o aluno está matriculado");*/
 
-
                     //aluno1, aluno2...são referencias para o objeto aluno
                     //new Aluno() é uma instancia (criação de um Objeto)
                     //Construtor padrão
@@ -122,8 +121,22 @@ public class Main {
             }
 
         } catch (Exception e) {
+
+            StringBuilder saida = new StringBuilder();
+
             e.printStackTrace();//Imprime erro no console
-            JOptionPane.showMessageDialog(null, "Erro ao processar notas" + e.getMessage());
+
+            //Mensagem ou causa do erro
+            System.out.println(" Mensagem: " + e.getMessage());
+
+            for (int pos = 0; pos < e.getStackTrace().length; pos++) {
+                saida.append("\nClasse onde se encontra o erro: " + e.getStackTrace()[pos].getClassName());
+                saida.append("\nMétodo onde se encontra erro: " + e.getStackTrace()[pos].getMethodName());
+                saida.append("\nLinha onde se encontra o erro: " + e.getStackTrace()[pos].getLineNumber());
+                saida.append("\nClasse do erro: " + e.getClass().getName());
+            }
+
+            JOptionPane.showMessageDialog(null, "Erro ao processar notas: " + saida.toString());
         }
 
     }
