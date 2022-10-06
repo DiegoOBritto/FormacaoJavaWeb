@@ -9,6 +9,7 @@ import cursojava.constantes.StatusAluno;
 import cursojava.interfaces.PermitirAcesso;
 
 import javax.swing.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -19,6 +20,7 @@ public class Main {
 
         try {
 
+            new File("arquivo.txt");
 
             String login = JOptionPane.showInputDialog("Informe o Login: ");
             String senha = JOptionPane.showInputDialog("Informe a Senha: ");
@@ -33,15 +35,15 @@ public class Main {
                 for (int qtd = 1; qtd <= 2; qtd++) {
 
                     String nome = JOptionPane.showInputDialog("Digite o nome do aluno " + qtd + " ? ");
-                /*String idade = JOptionPane.showInputDialog("Digite a idade do aluno ?");
-                String nascimento = JOptionPane.showInputDialog("Digite a data de nascimento do aluno ?");
-                String rg = JOptionPane.showInputDialog("Digite o RG do aluno ?");
-                String cpf = JOptionPane.showInputDialog("Digite o CPF do aluno ?");
-                String mae = JOptionPane.showInputDialog("Digite o nome da mãe do aluno: ");
-                String pai = JOptionPane.showInputDialog("Digite o nome do pai do aluno: ");
-                String matricula = JOptionPane.showInputDialog("Digite a data da matricula do aluno: ");
-                String escola = JOptionPane.showInputDialog("Digite o nome da escola: ");
-                String serie = JOptionPane.showInputDialog("Digite a série em que o aluno está matriculado");*/
+                    String idade = JOptionPane.showInputDialog("Digite a idade do aluno ?");
+                    /*String nascimento = JOptionPane.showInputDialog("Digite a data de nascimento do aluno ?");
+                    String rg = JOptionPane.showInputDialog("Digite o RG do aluno ?");
+                    String cpf = JOptionPane.showInputDialog("Digite o CPF do aluno ?");
+                    String mae = JOptionPane.showInputDialog("Digite o nome da mãe do aluno: ");
+                    String pai = JOptionPane.showInputDialog("Digite o nome do pai do aluno: ");
+                    String matricula = JOptionPane.showInputDialog("Digite a data da matricula do aluno: ");
+                    String escola = JOptionPane.showInputDialog("Digite o nome da escola: ");
+                    String serie = JOptionPane.showInputDialog("Digite a série em que o aluno está matriculado");*/
 
                     //aluno1, aluno2...são referencias para o objeto aluno
                     //new Aluno() é uma instancia (criação de um Objeto)
@@ -49,15 +51,15 @@ public class Main {
                     Aluno aluno1 = new Aluno();
 
                     aluno1.setNome(nome);
-                /*aluno1.setIdade(Integer.valueOf(idade));
-                aluno1.setDataNascimento(nascimento);
-                aluno1.setRegistroGeral(rg);
-                aluno1.setNumeroCpf(cpf);
-                aluno1.setNomeMae(mae);
-                aluno1.setNomePai(pai);
-                aluno1.setDataMatricula(matricula);
-                aluno1.setNomeEscola(escola);
-                aluno1.setSerieMatriculado(serie);*/
+                    aluno1.setIdade(Integer.valueOf(idade));
+                    /* aluno1.setDataNascimento(nascimento);
+                    aluno1.setRegistroGeral(rg);
+                    aluno1.setNumeroCpf(cpf);
+                    aluno1.setNomeMae(mae);
+                    aluno1.setNomePai(pai);
+                    aluno1.setDataMatricula(matricula);
+                    aluno1.setNomeEscola(escola);
+                    aluno1.setSerieMatriculado(serie);*/
 
                     for (int pos = 1; pos <= 1; pos++) {
                         String nomeDisciplina = JOptionPane.showInputDialog("Informe a disciplina: " + pos);
@@ -120,7 +122,7 @@ public class Main {
                 JOptionPane.showMessageDialog(null, "Acesso não permitido");
             }
 
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
 
             StringBuilder saida = new StringBuilder();
 
@@ -136,7 +138,11 @@ public class Main {
                 saida.append("\nClasse do erro: " + e.getClass().getName());
             }
 
-            JOptionPane.showMessageDialog(null, "Erro ao processar notas: " + saida.toString());
+            JOptionPane.showMessageDialog(null, "Erro de conversão de número: " + saida.toString());
+        } catch (NullPointerException e) {
+            JOptionPane.showMessageDialog(null, "Erro Null Pointer Exception " + e.getClass());
+        }   catch (Exception e) {
+            e.printStackTrace();
         }
 
     }
