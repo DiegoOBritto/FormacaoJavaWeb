@@ -144,9 +144,12 @@ public class Main {
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Erro Null Pointer Exception " + e.getClass());
 
-        }   catch (Exception e) { //Captura todas as exceções que não são previstas
+        } catch (Exception e) { //Captura todas as exceções que não são previstas
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Erro inesperado: " + e.getClass().getName());
+
+        } finally { //Finally sempre é usado quando precisa executar um processo, ocorrendo erros ou não
+            JOptionPane.showMessageDialog(null, "Final do processo");
         }
 
     }
