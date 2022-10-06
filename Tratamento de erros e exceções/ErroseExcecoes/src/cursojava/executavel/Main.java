@@ -13,6 +13,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -20,7 +21,8 @@ public class Main {
 
         try {
 
-            new File("arquivo.txt");
+            File file = new File("arquivo.txt");
+            Scanner scanner = new Scanner(file);
 
             String login = JOptionPane.showInputDialog("Informe o Login: ");
             String senha = JOptionPane.showInputDialog("Informe a Senha: ");
@@ -141,8 +143,10 @@ public class Main {
             JOptionPane.showMessageDialog(null, "Erro de conversão de número: " + saida.toString());
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Erro Null Pointer Exception " + e.getClass());
-        }   catch (Exception e) {
+
+        }   catch (Exception e) { //Captura todas as exceções que não são previstas
             e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Erro inesperado: " + e.getClass().getName());
         }
 
     }
