@@ -125,7 +125,7 @@ public class Main {
                 JOptionPane.showMessageDialog(null, "Acesso não permitido");
             }
 
-        } catch (NumberFormatException e) {
+        } catch (Exception e) {
 
             StringBuilder saida = new StringBuilder();
 
@@ -142,25 +142,16 @@ public class Main {
             }
 
             JOptionPane.showMessageDialog(null, "Erro de conversão de número: " + saida.toString());
-        } catch (NullPointerException e) {
-            JOptionPane.showMessageDialog(null, "Erro Null Pointer Exception " + e.getClass());
-
-        } catch (ExcecaoProcessarNota e) { //Captura todas as exceções que não são previstas
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Erro da exceção customizada: " + e.getClass().getName());
 
         } finally { //Finally sempre é usado quando precisa executar um processo, ocorrendo erros ou não
             JOptionPane.showMessageDialog(null, "Processo encerrado, motivo: erro");
         }
     }
 
-    public static void lerArquivo() throws ExcecaoProcessarNota {
-        try {
-            File file = new File("c://lines.txt");
-            Scanner scanner = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            throw new ExcecaoProcessarNota(e.getMessage());
-        }
-    }
+    public static void lerArquivo() throws FileNotFoundException {
 
+        File file = new File("c://lines.txt");
+        Scanner scanner = new Scanner(file);
+
+    }
 }
