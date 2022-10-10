@@ -6,10 +6,12 @@ import cursojava.classes.Disciplina;
 import cursojava.classes.Secretario;
 import cursojava.classesauxiliares.FuncaoAutenticacao;
 import cursojava.constantes.StatusAluno;
+import cursojava.excecao.ExcecaoProcessarNota;
 import cursojava.interfaces.PermitirAcesso;
 
 import javax.swing.*;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,8 +23,7 @@ public class Main {
 
         try {
 
-            File file = new File("arquivo.txt");
-            Scanner scanner = new Scanner(file);
+            lerArquivo();
 
             String login = JOptionPane.showInputDialog("Informe o Login: ");
             String senha = JOptionPane.showInputDialog("Informe a Senha: ");
@@ -144,13 +145,22 @@ public class Main {
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Erro Null Pointer Exception " + e.getClass());
 
-        } catch (Exception e) { //Captura todas as exceções que não são previstas
+        } catch (ExcecaoProcessarNota e) { //Captura todas as exceções que não são previstas
             e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Erro inesperado: " + e.getClass().getName());
+            JOptionPane.showMessageDialog(null, "Erro da exceção customizada: " + e.getClass().getName());
 
         } finally { //Finally sempre é usado quando precisa executar um processo, ocorrendo erros ou não
-            JOptionPane.showMessageDialog(null, "Final do processo");
+            JOptionPane.showMessageDialog(null, "Processo encerrado, motivo: erro");
         }
-
     }
+
+    public static void lerArquivo() throws ExcecaoProcessarNota {
+        try {
+            File file = new File("c://lines.txt");
+            Scanner scanner = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            throw new ExcecaoProcessarNota(e.getMessage());
+        }
+    }
+
 }
