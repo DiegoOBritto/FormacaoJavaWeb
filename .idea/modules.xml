@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/FormacaoJavaWeb.iml" filepath="$PROJECT_DIR$/.idea/FormacaoJavaWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Herança, Polimorfismo e Interfaces/Herança, Polimorfismo e Interfaces.iml" filepath="$PROJECT_DIR$/Herança, Polimorfismo e Interfaces/Herança, Polimorfismo e Interfaces.iml" />
+      <module fileurl="file://$PROJECT_DIR$/POO - Programação Orientada a Objetos/POO - Programação Orientada a Objetos.iml" filepath="$PROJECT_DIR$/POO - Programação Orientada a Objetos/POO - Programação Orientada a Objetos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tratamento de erros e exceções/Tratamento de erros e exceções.iml" filepath="$PROJECT_DIR$/Tratamento de erros e exceções/Tratamento de erros e exceções.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vetores e Matrizes - Estrutura de Dados/Vetores e Matrizes - Estrutura de Dados.iml" filepath="$PROJECT_DIR$/Vetores e Matrizes - Estrutura de Dados/Vetores e Matrizes - Estrutura de Dados.iml" />
+      <module fileurl="file://$PROJECT_DIR$/primeiro-programa-java/primeiro-programa-java.iml" filepath="$PROJECT_DIR$/primeiro-programa-java/primeiro-programa-java.iml" />
+    </modules>
+  </component>
+</project>

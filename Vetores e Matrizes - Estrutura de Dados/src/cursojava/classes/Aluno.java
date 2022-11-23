@@ -1,24 +1,18 @@
-package classesJava;
+package cursojava.classes;
 
-import constantes.StatusAluno;
+import cursojava.constantes.StatusAluno;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-//Classe(objeto) que representa o Aluno
-public class Aluno {
+public class Aluno extends Pessoa {
 
     //Atributos do Aluno
-    public String nome;
-    public int idade;
-    public String dataNascimento;
-    public String registroGeral;
-    public String numeroCpf;
-    public String nomeMae;
-    public String nomePai;
-    public String dataMatricula;
-    public String nomeEscola;
-    public String serieMatriculado;
+
+    private String dataMatricula;
+    private String nomeEscola;
+    private String serieMatriculado;
     private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 
     //Construtores criam os dados na memória - Sendo padrão do Java
@@ -40,6 +34,11 @@ public class Aluno {
     //GET resgata ou obtem o valor do atributo
     public void setNome(String nome) { // recebe dados
         this.nome = nome;
+    }
+
+    @Override
+    public double salario() {
+        return 1500;
     }
 
     public String getNome() {
@@ -186,4 +185,14 @@ public class Aluno {
     public int hashCode() {
         return Objects.hash(nome, numeroCpf);
     }
+
+    @Override //Identifica método sobrescrito
+    public boolean pessoaMaiorIdade() {
+        return idade >= 21;
+    }
+
+    public String msgMaiorIdade() {
+        return this.pessoaMaiorIdade() ? "Esse aluno é maior de idade" : "Esse aluno é menor de idade ";
+    }
+
 }
