@@ -4,19 +4,16 @@ import javax.swing.*;
 
 public class Arrays {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        String posicoes = JOptionPane.showInputDialog("Quantas posições o Array deve ter ?");
+		String[] valores = { "diego", "9", "Curso Java", "diego@email.com" };
 
-        double[] notas = new double[Integer.parseInt(posicoes)];
+		for (int pos = 0; pos < valores.length; pos++) {
+			System.out.println("Valor na posição " + pos + " é igual = " + valores[pos]);
+		}
 
-        for (int pos = 0; pos < notas.length; pos ++) {
-            String valor = JOptionPane.showInputDialog("Qual o valor da posição " + (pos + 1) + " ?");
-            notas[pos] = Double.valueOf(valor);
-        }
+		int[] inteiros = new int[10];
+		float[] floats = new float[10];
 
-        for (int pos = 0; pos < notas.length; pos++) {
-            System.out.println("Nota " + (pos + 1) + " é: " + notas[pos]);
-        }
-    }
+	}
 }
